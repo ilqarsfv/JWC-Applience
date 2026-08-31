@@ -10,4 +10,32 @@ $(function () {
     //   disableOnInteraction: false,
     // },
   });
+
+  const $menuToggle = $("#menuToggle");
+  const $menuOverlay = $("#menuOverlay");
+
+  $menuToggle.on("click", function () {
+    $(this).toggleClass("open");
+    $menuOverlay.toggleClass("open");
+    $("body").toggleClass("menu-open");
+  });
+
+  $menuOverlay.find("a").on("click", function () {
+    $menuToggle.removeClass("open");
+    $menuOverlay.removeClass("open");
+    $("body").removeClass("menu-open");
+  });
+
+  $("#themeToggle").on("click", function () {
+    $("body").toggleClass("dark-mode");
+  });
+
+  const $scrollProgress = $("#scrollProgress");
+  $(window).on("scroll", function () {
+    const scrollTop = $(window).scrollTop();
+    const docHeight = $(document).height() - $(window).height();
+    const percent = docHeight > 0 ? Math.round((scrollTop / docHeight) * 100) : 0;
+    $scrollProgress.css("--scroll", percent);
+    $scrollProgress.find("span").text(percent + "%");
+  });
 });
