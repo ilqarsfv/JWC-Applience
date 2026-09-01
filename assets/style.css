@@ -529,8 +529,8 @@ body.menu-open {
   z-index: 1;
   pointer-events: none;
 
- background: #ffffff;
-background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(0, 0, 0, 0.15) 50%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
+  background: #ffffff;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(0, 0, 0, 0.15) 50%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
 }
 #service_cover {
   background: url("./photos/appliance\ repair\ services.webp") center/cover no-repeat;
@@ -557,4 +557,72 @@ background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255,
   height: 100%;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), transparent);
   pointer-events: none;
+}
+
+.RealAnswersSeed_seed-bg__XvFVg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  overflow: hidden;
+}
+.RealAnswersSeed_seed-bg-active__kdmpv,
+.RealAnswersSeed_seed-bg-default__Faeyo,
+.RealAnswersSeed_seed-bg-hover__X6mqi {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  transition: opacity 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  will-change: opacity;
+}
+.RealAnswersSeed_seed-bg-default__Faeyo {
+  z-index: 1;
+  opacity: 1;
+}
+.RealAnswersSeed_seed-secondary__06lQn .RealAnswersSeed_seed-bg-default__Faeyo {
+  background: linear-gradient(180deg, rgba(217, 34, 40, 0), rgba(254, 226, 227, 0.13));
+}
+.RealAnswersSeed_seed-bg-hover__X6mqi {
+  z-index: 2;
+  opacity: 0;
+}
+.RealAnswersSeed_seed-bg-active__kdmpv {
+  z-index: 3;
+  opacity: 0;
+}
+.RealAnswersSeed_seed-secondary__06lQn:not(:disabled):hover {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
+}
+
+.RealAnswersSeed_seed-secondary__06lQn:not(:disabled):hover .RealAnswersSeed_seed-bg-default__Faeyo {
+  opacity: 0;
+}
+.RealAnswersSeed_seed-secondary__06lQn:not(:disabled):hover .RealAnswersSeed_seed-bg-hover__X6mqi {
+  opacity: 1;
+}
+.RealAnswersSeed_seed-secondary__06lQn .RealAnswersSeed_seed-bg-hover__X6mqi {
+  background: linear-gradient(180deg, hsla(0, 0%, 100%, 0.95), rgba(254, 226, 227, 0.5));
+}
+.RealAnswersSeed_seed-secondary__06lQn .RealAnswersSeed_seed-bg-active__kdmpv {
+  background: linear-gradient(180deg, #d9222880, rgba(254, 226, 227, 0.75));
+}
+
+.RealAnswersSeed_seed__RJZNe {
+    position: relative;
+    isolation: isolate;
+    height: 36px;
+    border-radius: 32px;
+    max-height: 56px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-wrap: nowrap;
+    cursor: pointer;
+    user-select: none;
+    transition: box-shadow .2s cubic-bezier(.455, .03, .515, .955), transform .1s cubic-bezier(.25, .46, .45, .94);
 }
