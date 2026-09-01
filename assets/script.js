@@ -45,4 +45,43 @@ $(function () {
     this.style.setProperty("--x", e.clientX - rect.left + "px");
     this.style.setProperty("--y", e.clientY - rect.top + "px");
   });
+
+  const $searchInput = $("#bannerSearchInput");
+  if ($searchInput.length) {
+    const phrases = [
+      "Axtarış edin...",
+      "Təmir xidməti axtarın...",
+      "Ehtiyat hissəsi axtarın...",
+      "Servis mərkəzi axtarın...",
+    ];
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeTick() {
+      if ($searchInput.is(":focus") || $searchInput.val()) {
+        setTimeout(typeTick, 300);
+        return;
+      }
+
+      const current = phrases[phraseIndex];
+      charIndex += deleting ? -1 : 1;
+      $searchInput.attr("placeholder", current.slice(0, charIndex));
+
+      let delay = deleting ? 40 : 80;
+
+      if (!deleting && charIndex === current.length) {
+        deleting = true;
+        delay = 1500;
+      } else if (deleting && charIndex === 0) {
+        deleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        delay = 300;
+      }
+
+      setTimeout(typeTick, delay);
+    }
+
+    typeTick();
+  }
 });
