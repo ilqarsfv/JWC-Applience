@@ -9,6 +9,7 @@ $(function () {
       delay: 2500,
       disableOnInteraction: false,
     },
+    speed: 1000,
   });
 
   const $menuToggle = $("#menuToggle");
