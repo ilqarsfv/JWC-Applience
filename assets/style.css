@@ -516,3 +516,45 @@ body.menu-open {
   z-index: -1;
   background-color: #111;
 }
+
+#services_wrapper {
+  height: 100vh;
+}
+#service_overylay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 1;
+  pointer-events: none;
+
+ background: #ffffff;
+background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%, rgba(0, 0, 0, 0.15) 50%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1) 100%);
+}
+#service_cover {
+  background: url("./photos/appliance\ repair\ services.webp") center/cover no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 50%;
+  width: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+.service_item img {
+  transition: all 0.5s ease-in-out;
+}
+.service_item:hover img {
+  transform: scale(1.1);
+}
+.service_item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), transparent);
+  pointer-events: none;
+}
