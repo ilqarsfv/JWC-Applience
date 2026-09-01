@@ -38,4 +38,10 @@ $(function () {
     $scrollProgress.css("--scroll", percent);
     $scrollProgress.find("span").text(percent + "%");
   });
+
+  $(".mouse-cursor-gradient-tracking").on("mouseenter mousemove", function (e) {
+    const rect = this.getBoundingClientRect();
+    this.style.setProperty("--x", e.clientX - rect.left + "px");
+    this.style.setProperty("--y", e.clientY - rect.top + "px");
+  });
 });
