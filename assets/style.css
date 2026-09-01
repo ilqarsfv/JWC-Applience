@@ -18,6 +18,26 @@ body {
   margin: 0 var(--rail-width);
 }
 
+.container {
+  width: 100%;
+  max-width: 1720px;
+  margin-inline: auto;
+  padding-inline: 40px;
+}
+
+/* MacBook Air 13.6" (1512px @100%, ~1210px @125% zoom) and similar laptop widths */
+@media (max-width: 1440px) {
+  .container {
+    padding-inline: 24px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .container {
+    padding-inline: 20px;
+  }
+}
+
 .side-rail {
   position: fixed;
   top: 0;
