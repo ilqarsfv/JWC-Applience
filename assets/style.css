@@ -517,9 +517,9 @@ body.menu-open {
   background-color: #111;
 }
 
-#services_wrapper {
+/* #services_wrapper {
   height: 100vh;
-}
+} */
 #service_overylay {
   position: absolute;
   top: 0;
