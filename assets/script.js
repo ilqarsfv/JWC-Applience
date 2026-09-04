@@ -48,6 +48,10 @@ $(function () {
     $("body").toggleClass("rails-scrolled", scrollTop > 150);
   });
 
+  $(".testimonials_track").each(function () {
+    $(this).append($(this).html());
+  });
+
   $(".mouse-cursor-gradient-tracking").on("mouseenter mousemove", function (e) {
     const rect = this.getBoundingClientRect();
     this.style.setProperty("--x", e.clientX - rect.left + "px");
