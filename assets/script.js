@@ -21,6 +21,12 @@ $(function () {
     $("body").toggleClass("menu-open");
   });
 
+  $menuOverlay.find(".menu-overlay-toggle").on("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $(this).closest(".has-submenu").toggleClass("submenu-open");
+  });
+
   $menuOverlay.find("a").on("click", function () {
     $menuToggle.removeClass("open");
     $menuOverlay.removeClass("open");
@@ -38,6 +44,8 @@ $(function () {
     const percent = docHeight > 0 ? Math.round((scrollTop / docHeight) * 100) : 0;
     $scrollProgress.css("--scroll", percent);
     $scrollProgress.find("span").text(percent + "%");
+
+    $("body").toggleClass("rails-scrolled", scrollTop > 150);
   });
 
   $(".mouse-cursor-gradient-tracking").on("mouseenter mousemove", function (e) {
